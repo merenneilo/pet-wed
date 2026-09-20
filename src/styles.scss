@@ -32,6 +32,7 @@ section {
 html {
   --c-main: rgba(254, 250, 238, 1);
   --c-second: rgba(141, 17, 34, 1);
+  --c-second-07: rgba(141, 17, 34, 0.7);
   --c-3: rgba(141, 17, 34, 1);
 }
 
@@ -92,7 +93,8 @@ section {
 
   p {
     line-height: 1.4;
-    text-align: center;
+    text-align: justify;
+    text-indent: 35px;
     margin-bottom: 20px;
   }
 }
@@ -103,26 +105,117 @@ section.bg-second {
 }
 
 .main-image {
+  padding-top: 0;
   padding-left: 0;
   padding-right: 0;
   position: relative;
 
   > p:first-child {
     position: absolute;
-    top: 7%;
-    left: 50%;
+    top: 6%;
+    left: 47%;
     transform: translate(-50%);
-    font-size: 2rem;
+    font-family: 'Charis', serif;
+    font-size: 29px;
     width: max-content;
   }
 
   .we {
     font-size: 2.1rem;
     font-family: 'Charis', serif;
+    margin-top: 10px;
+  }
+
+  div.svg-mask {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-color: var(--c-second);
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+
+    &.hands {
+      mask-image: url('../public/hands.svg');
+      -webkit-mask-image: url('../public/hands.svg');
+      aspect-ratio: 3 / 3.2;
+    }
+
+    &.lent-ochka {
+      margin-top: 10px;
+      mask-image: url('../public/lent-ochka.svg');
+      -webkit-mask-image: url('../public/lent-ochka.svg');
+      aspect-ratio: 12 / 1.5;
+    }
   }
 }
 
 .calendar__table {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 92%;
+  aspect-ratio: 1 / 1;
+
+  .day-of-week,
+  .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .day-of-week {
+    font-weight: 400;
+  }
+
+  .target-day {
+    position: relative;
+
+    &::before {
+      --size: calc(min(100vw, 900px) / 7 * 1.2);
+
+      position: absolute;
+      content: '';
+      top: -3%;
+      left: 50%;
+      transform: rotateZ(11deg) translateX(-50%);
+      width: var(--size);
+      height: var(--size);
+      background-color: var(--c-second);
+      mask-image: url('../public/heart2.svg');
+      -webkit-mask-image: url('../public/heart2.svg');
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+    }
+
+    &::after {
+      position: absolute;
+      content: '14';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: var(--c-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.interact {
+  background-color: var(--c-second);
+  color: var(--c-main);
+  padding: 0 6px;
+  border-radius: 10px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
