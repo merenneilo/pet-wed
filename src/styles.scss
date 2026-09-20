@@ -77,16 +77,16 @@ h2 {
 }
 
 section {
-  padding: 55px 24px 50px;
+  padding: 45px 24px 50px;
 
   font-family: 'Gentium', sans-serif;
-  font-size: 1.5rem;
+  font-size: 18px;
 
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
 
   background-color: var(--c-main);
@@ -105,11 +105,33 @@ section.bg-second {
   color: var(--c-main);
 }
 
+.interact {
+  background-color: var(--c-second);
+  color: var(--c-main);
+  padding: 0 6px;
+  border-radius: 10px;
+
+  &.invert {
+    background-color: var(--c-main);
+    color: var(--c-second);
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
 .main-image {
   padding-top: 0;
   padding-left: 0;
   padding-right: 0;
   position: relative;
+  align-items: center;
 
   > p:first-child {
     position: absolute;
@@ -208,18 +230,71 @@ section.bg-second {
   }
 }
 
-.interact {
-  background-color: var(--c-second);
-  color: var(--c-main);
-  padding: 0 6px;
-  border-radius: 10px;
+.day-plan {
+  .table {
+    display: grid;
+    grid-template-columns: max-content 2px 1fr;
+    width: 92%;
+    gap: 0 40px;
+    position: relative;
 
-  &:hover {
-    cursor: pointer;
-    opacity: 0.7;
+    .v-line {
+      background-color: var(--c-main);
+    }
+
+    > div {
+      padding-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &:nth-of-type(3n) {
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+        // margin: 0 25%;
+
+        > div {
+          line-height: 1.3;
+        }
+
+        a {
+          font-size: 14px;
+          transform: translate(-7px);
+
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.flowers {
+  span {
+    padding: 0 6px;
   }
 
-  &:active {
-    opacity: 0.5;
+  a {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px 20px 4px 5px;
+
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    span {
+      font-size: 18px;
+    }
   }
 }
