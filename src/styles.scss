@@ -1,0 +1,128 @@
+@use './reset.scss' as *;
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Charis';
+  src: url('../public/fonts/Charis_SIL/CharisSIL-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium';
+  src: url('../public/fonts/Gentium_Book_Plus/GentiumBookPlus-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-display: swap;
+}
+
+html,
+body,
+p,
+div,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1;
+}
+
+html {
+  --c-main: rgba(254, 250, 238, 1);
+  --c-second: rgba(141, 17, 34, 1);
+  --c-3: rgba(141, 17, 34, 1);
+}
+
+body {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+html,
+body {
+  font-family: 'Gentium', sans-serif;
+  background-color: var(--c-main);
+  color: var(--c-second);
+}
+
+.font-h,
+h1,
+h2 {
+  font-family: 'Charis', serif;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.page-1 {
+  min-height: fit-content;
+  height: 100vh;
+  max-height: 800px;
+}
+
+h1 {
+  margin: 45px 25px 20px;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+h2 {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  line-height: 1.1;
+}
+
+section {
+  padding: 55px 24px 50px;
+
+  font-family: 'Gentium', sans-serif;
+  font-size: 1.5rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--c-main);
+
+  p {
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+section.bg-second {
+  background-color: var(--c-3);
+  color: var(--c-main);
+}
+
+.main-image {
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+
+  > p:first-child {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 2rem;
+    width: max-content;
+  }
+
+  .we {
+    font-size: 2.1rem;
+    font-family: 'Charis', serif;
+  }
+}
+
+.calendar__table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
