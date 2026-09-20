@@ -72,7 +72,7 @@ h1 {
 h2 {
   margin-bottom: 30px;
   text-transform: uppercase;
-  font-size: 2.2rem;
+  font-size: 32px;
   line-height: 1.1;
 }
 
@@ -95,6 +95,7 @@ section {
     line-height: 1.4;
     text-align: justify;
     text-indent: 35px;
+    font-size: 18px;
     margin-bottom: 20px;
   }
 }
@@ -112,7 +113,7 @@ section.bg-second {
 
   > p:first-child {
     position: absolute;
-    top: 6%;
+    top: 4%;
     left: 47%;
     transform: translate(-50%);
     font-family: 'Charis', serif;
@@ -121,9 +122,12 @@ section.bg-second {
   }
 
   .we {
-    font-size: 2.1rem;
-    font-family: 'Charis', serif;
     margin-top: 10px;
+
+    p {
+      font-size: 28px;
+      font-family: 'Charis', serif;
+    }
   }
 
   div.svg-mask {
