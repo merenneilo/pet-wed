@@ -29,6 +29,12 @@ export class App {
   })();
 
   onMerciShorClic() {
-    navigator.clipboard.writeText('Мэрцишор');
+    try {
+      navigator.clipboard.writeText('Мэрцишор').then(() => {
+        alert('Кодовое слово скопировано!');
+      });
+    } catch (err) {
+      console.error("Can't write to clipboard!");
+    }
   }
 }
