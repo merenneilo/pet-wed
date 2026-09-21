@@ -108,7 +108,7 @@ section.bg-second {
 .interact {
   background-color: var(--c-second);
   color: var(--c-main);
-  padding: 0 6px;
+  padding: 3px 6px;
   border-radius: 10px;
 
   &.invert {
@@ -124,6 +124,12 @@ section.bg-second {
   &:active {
     opacity: 0.5;
   }
+}
+
+a.interact {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .main-image {
@@ -192,6 +198,7 @@ section.bg-second {
 
   .day-of-week {
     font-weight: 400;
+    border-bottom: 2px solid var(--c-second);
   }
 
   .target-day {
@@ -263,10 +270,6 @@ section.bg-second {
           font-size: 14px;
           transform: translate(-7px);
 
-          display: flex;
-          align-items: center;
-          gap: 5px;
-
           span {
             font-size: 18px;
           }
@@ -289,12 +292,61 @@ section.bg-second {
 
     width: fit-content;
 
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
     span {
       font-size: 18px;
     }
+  }
+}
+
+.form {
+  a {
+    padding: 4px 20px 4px 5px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.bye {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .img {
+    --w: 40%;
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: var(--w);
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      left: calc((100% - var(--w)) / 2);
+      transform: translate(-45px, -25%);
+      white-space: pre-wrap;
+      margin: 0;
+    }
+  }
+
+  p {
+    width: fit-content;
+    text-indent: 0;
+  }
+
+  > p {
+    margin-top: 12px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .bye .img {
+    --w: 60%;
   }
 }
