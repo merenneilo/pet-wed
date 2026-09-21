@@ -27,4 +27,8 @@ export class App {
 
     return result;
   })();
+
+  onMerciShorClic() {
+    navigator.clipboard.writeText('Мэрцишор');
+  }
 }
